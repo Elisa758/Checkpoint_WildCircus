@@ -1,0 +1,40 @@
+﻿<Window x:Class="WildCircus.OrderTicketsForAShowWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WildCircus"
+        mc:Ignorable="d"
+        Title="OrderTicketsForAShowWindow" Height="500" Width="450">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="References/circusBG.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" >
+            <TextBlock Text="Wild Circus" Margin="5 5 5 5" VerticalAlignment="Center" FontFamily="/WildCircus;component/References/#Amatic SC" FontSize="50" Foreground="#FFD675A9" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center"  Width="400" Background="Black" Opacity="0.70" >
+            <Label x:Name="Intro_Label" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="12" FontFamily="Yu Gothic UI Semibold">You have selected the following show :</Label>
+            <Label x:Name="ShowName_Label" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Yu Gothic UI Semibold"/>
+            <Label x:Name="ShowDate_Label" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Yu Gothic UI Semibold"/>
+            <Label x:Name="ShowLocation_Label" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Yu Gothic UI Semibold"/>
+            <ComboBox x:Name="Quantity_ComboBox" SelectionChanged="Quantity_ComboBox_SelectionChanged" Width="70" />
+            <TextBlock x:Name="Price_TextBlock" Margin="5 5 5 5" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Yu Gothic UI Semibold"/>
+            <TextBlock x:Name="Description_TextBlock" Margin="5 5 5 5" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14" FontFamily="Yu Gothic UI Semibold"
+                       TextWrapping="Wrap" TextAlignment="Justify" Height="150" Width="300" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Margin="10" Height="70">
+            <Button x:Name="Validate_btn" Content="Validate" Click="Validate_btn_Click" Margin="5" Height="35" Width="55" Background="#FF2C2134" Foreground="#FFE8D3EE" FontFamily="Yu Gothic UI Semibold" />
+            <Button x:Name="Cancel_btn" Content="Cancel" Click="Cancel_btn_Click" Margin="5" Height="35" Width="55" Background="#FF2C2134" Foreground="#FFE8D3EE" FontFamily="Yu Gothic UI Semibold" />
+        </StackPanel>
+    </Grid>
+</Window>

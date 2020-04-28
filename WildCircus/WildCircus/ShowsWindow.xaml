@@ -1,0 +1,67 @@
+﻿<Window x:Class="WildCircus.ShowsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WildCircus"
+        mc:Ignorable="d"
+        Title="ShowsWindow" Height="450" Width="850">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="References/circusBG.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" >
+            <TextBlock Text="Wild Circus" Margin="5 5 5 5" VerticalAlignment="Center" FontFamily="/WildCircus;component/References/#Amatic SC" FontSize="50" Foreground="#FFD675A9" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" >
+            <Menu Height="30" Background="#FF2C2134" Foreground="#FFE8D3EE"  >
+                <MenuItem Header="Home" Click="HomeMenu_Click" Height="30" />
+                <MenuItem Header="Performers" Click="PerformerMenu_Click" Height="30"/>
+                <MenuItem Header="Shows" Click="ShowMenu_Click" Height="30"/>
+                <MenuItem Header="Export" Click="ExportMenu_Click" Height="30"/>
+                <MenuItem Header="Contatc us" Click="ContactMenu_Click" Height="30"/>
+
+            </Menu>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <ListView x:Name="Shows_ListView" Height="280" Margin="5" Opacity="0.85" Foreground="Black" Background="#FFBDBDBD">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Show" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                        <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" Width="200"/>
+                        <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}" Width="200"/>
+                        <GridViewColumn Header="Price/person" DisplayMemberBinding="{Binding Price}" Width="100"/>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Name="Order_Btn" Content="Tickets" Click="Order_Btn_Click"
+                                                 Background="#FF2C2134" Foreground="#FFE8D3EE" FontFamily="Yu Gothic UI Semibold" Height="25"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem" >
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="IsSelected" Value="True"/>
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+            <Button x:Name="Add_Shows_Btn" Content="Add New Show" Click="Add_Shows_Btn_Click" Margin="10,10,10,10" HorizontalAlignment="Right" Height="25" Background="#FF2C2134" Width="100" BorderBrush="Black" Foreground="#FFE8D3EE" FontFamily="Yu Gothic UI Semibold"/>
+            
+
+        </StackPanel>
+    </Grid>
+</Window>

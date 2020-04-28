@@ -1,0 +1,85 @@
+﻿<Window x:Class="WildCircus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WildCircus"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#FFE53DFF"/>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="/WildCircus;component/References/#Amatic SC"/>
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="BorderBrush" Value="Black"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="References/circusBG.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+
+
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" >
+
+            <TextBlock Text="Wild Circus" Margin="5 5 5 5" VerticalAlignment="Center" FontFamily="/WildCircus;component/References/#Amatic SC" FontSize="50" Foreground="#FFD675A9" FontWeight="Bold"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" >
+            <Menu Height="30" Background="#FF2C2134" Foreground="#FFE8D3EE"  >
+                <MenuItem Header="Home" Click="HomeMenu_Click" Height="30" />
+                <MenuItem Header="Performers" Click="PerformerMenu_Click" Height="30"/>
+                <MenuItem Header="Shows" Click="ShowMenu_Click" Height="30"/>
+                <MenuItem Header="Export" Click="ExportMenu_Click" Height="30"/>
+                <MenuItem Header="Contatc us" Click="ContactMenu_Click" Height="30"/>
+            </Menu>
+        </StackPanel>
+        <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="5" Background="Black" Opacity="0.6">
+
+            <TextBlock x:Name="Historique_TextBlock"  Margin="10" TextWrapping="Wrap" Foreground="White">
+                Created in 1980, <Italic>Wild Circus </Italic> starts its first performances in a few little french town. Increasingly appreciated for its creativity by the public, <Italic>Wild Circus </Italic> begins to do bigger shows. Always wanting to go further, the circus gives free rein to the imagination of its artist. Today <Italic>Wild Circus </Italic> amazes people all around the world. Dream and magic are the heart of the philosophy of the circus and they want to share it with you.
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="3"  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,30,17,-29">
+            <StackPanel Orientation="Vertical" Background="Black" Opacity="0.8" Margin="10">
+                <Label HorizontalAlignment="Center">Dream</Label>
+                <TextBlock x:Name="Home_TextBlock" Margin="0 5 5 5" TextWrapping="Wrap" Width="230" Foreground="White" TextAlignment="Justify">
+            Let yourself be carried away in a world where the real and the imaginary are one, in the company of our talented magicians, discover a wonderful world limited only by your imagination.
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Background="Black" Opacity="0.8" Margin="10">
+                <Label HorizontalAlignment="Center">Laugh</Label>
+                <TextBlock Margin="0 10 5 5"  TextWrapping="Wrap" Width="230"  Foreground="White" TextAlignment="Justify">
+                As an adult, come and discover our irresistible clowns, between practical jokes and pranks let yourself be carried away by their joy and fall back into childhood.
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Background="Black" Opacity="0.8" Margin="10">
+                <Label HorizontalAlignment="Center">Marvel at</Label>
+                <TextBlock Margin="0 5 5 5" TextWrapping="Wrap" Width="230"  Foreground="White" TextAlignment="Justify">
+                Tame the untameable in the company of our tamers, between roar and razor-sharp claws, watch these fierce felines turn into sweet kittens.
+                </TextBlock>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="4">
+        <Image Source="References/tiger2.png" HorizontalAlignment="Center" Stretch="Uniform" Height="120" Grid.Row="3" />
+        </StackPanel>
+
+
+
+
+    </Grid>
+</Window>

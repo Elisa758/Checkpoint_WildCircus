@@ -1,0 +1,29 @@
+﻿<Window x:Class="WildCircus.ExportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WildCircus"
+        mc:Ignorable="d"
+        Title="ExportWindow" Height="300" Width="450">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="References/circusBG.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="200"/>
+            
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" >
+            <TextBlock Text="Wild Circus" Margin="5 5 5 5" VerticalAlignment="Center" FontFamily="/WildCircus;component/References/#Amatic SC" FontSize="50" Foreground="#FFD675A9" FontWeight="Bold"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" >
+            <TextBlock Text="Data Export in" Margin="5 5 5 5" VerticalAlignment="Center"/>
+            <Button x:Name="Export_Order_Btn" Content="Get Orders" Click="Export_Order_Btn_Click" Margin="5" Width="150" Height="30"/>
+            <Button x:Name="Export_Shows_Btn" Content="Get Shows" Click="Export_Shows_Btn_Click" Margin="5" Width="150" Height="30"/>
+            <Button x:Name="Export_Performers_Btn" Content="Get Performers" Click="Export_Performers_Btn_Click" Margin="5" Width="150" Height="30"/>
+        </StackPanel>
+    </Grid>
+</Window>
