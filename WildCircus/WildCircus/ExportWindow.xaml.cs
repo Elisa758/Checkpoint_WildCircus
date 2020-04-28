@@ -21,16 +21,9 @@ namespace WildCircus
 
         private void Export_Order_Btn_Click(object sender, RoutedEventArgs e)
         {
-
-            string filepath = $"http://localhost:1234/export/orders";
-
-            WebRequest request = WebRequest.Create(filepath);
-            request.Method = "PUT";
-            request.ContentLength = 0;
-            request.ContentType = "application/xml";
-            Stream dataStream = request.GetRequestStream();
-            dataStream.Close();
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            
+            var client = new WebClient();
+            client.DownloadString(@"http://localhost:1234/export/orders");
             MessageBox.Show("Export orders successfull");
 
 

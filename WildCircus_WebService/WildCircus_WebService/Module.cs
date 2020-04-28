@@ -13,9 +13,7 @@ namespace WildCircus_WebService
     {
         public Module()
         {
-            //Get(@"/export/orders", parameters => ExportAllOrders());
-            Put(@"/export/orders", parameters => ExportAllOrders());
-
+            Get(@"/export/orders", parameters => ExportAllOrders());
             Get(@"/export/shows", parameters => ExportAllShows());
             Get(@"/export/performers", parameters => ExportAllPerformers());
         }
