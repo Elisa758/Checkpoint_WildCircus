@@ -42,5 +42,10 @@ namespace WildCircus
             client.DownloadString(@"http://localhost:1234/export/performers");
             MessageBox.Show("Export performers successfull");
         }
+
+        private void Cancel_btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

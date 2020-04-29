@@ -20,15 +20,22 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" >
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" >
             <TextBlock Text="Wild Circus" Margin="5 5 5 5" VerticalAlignment="Center" FontFamily="/WildCircus;component/References/#Amatic SC" FontSize="50" Foreground="#FFD675A9" FontWeight="Bold"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="21,10,174,10" Background="Black" Opacity="0.7" Grid.RowSpan="2">
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="21,10,174,10" Grid.ColumnSpan="2" Background="Black" Opacity="0.7" Grid.RowSpan="3">
 
             <Label Content="Name"/>
             <TextBox x:Name="Name_TextBox" Width="200" Height="25"/>
@@ -46,10 +53,10 @@
             <ListBox x:Name="Performers_ListBox" Width="200" Height="100" SelectionMode="Multiple"/>
 
         </StackPanel>
-
-        <Button x:Name="AddShow_Button" Content="Add" Click="AddShow_Button_Click" Width="100" Background="#FF2C2134" Foreground="#FFE8D3EE" FontFamily="Yu Gothic UI Semibold" Height="25" Margin="452,270,40,74" Grid.Row="2"/>
-        <Button x:Name="Cancel_Button" Content="Cancel" Click="Cancel_Button_Click" Width="100" Background="#FF2C2134" Foreground="#FFE8D3EE" FontFamily="Yu Gothic UI Semibold" Height="25" Margin="452,318,40,26" Grid.Row="2"/>
-
+        <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Margin="5">
+            <Button x:Name="AddShow_Button" Margin="5" Content="Add" Click="AddShow_Button_Click" Width="100" Background="#FF2C2134" Foreground="#FFE8D3EE" FontFamily="Yu Gothic UI Semibold" Height="30" Grid.Row="2"/>
+            <Button x:Name="Cancel_Button" Margin="5" Content="Cancel" Click="Cancel_Button_Click" Width="100" Background="#FF2C2134" Foreground="#FFE8D3EE" FontFamily="Yu Gothic UI Semibold" Height="30" Grid.Row="2"/>
+        </StackPanel>
 
     </Grid>
 </Window>

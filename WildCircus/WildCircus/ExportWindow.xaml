@@ -12,18 +12,23 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="200"/>
-            
+            <RowDefinition Height="160"/>
+            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" >
             <TextBlock Text="Wild Circus" Margin="5 5 5 5" VerticalAlignment="Center" FontFamily="/WildCircus;component/References/#Amatic SC" FontSize="50" Foreground="#FFD675A9" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel Grid.Row="1" >
-            <TextBlock Text="Data Export in" Margin="5 5 5 5" VerticalAlignment="Center"/>
+            <TextBlock Text="Data Export" Margin="5 5 5 5" VerticalAlignment="Center" Foreground="White"/>
             <Button x:Name="Export_Order_Btn" Content="Get Orders" Click="Export_Order_Btn_Click" Margin="5" Width="150" Height="30"/>
             <Button x:Name="Export_Shows_Btn" Content="Get Shows" Click="Export_Shows_Btn_Click" Margin="5" Width="150" Height="30"/>
             <Button x:Name="Export_Performers_Btn" Content="Get Performers" Click="Export_Performers_Btn_Click" Margin="5" Width="150" Height="30"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Button x:Name="Cancel_btn" Content="Cancel" Click="Cancel_btn_Click" HorizontalAlignment="Right" Margin="10" Height="35" Width="55" Background="#FF2C2134" Foreground="#FFE8D3EE" FontFamily="Yu Gothic UI Semibold" />
         </StackPanel>
     </Grid>
 </Window>
