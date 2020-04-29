@@ -63,7 +63,7 @@ namespace WildCircus
 
         private bool IsAllBoxFilled()
         {
-            if(Name_TextBox.Text !=null && Location_TextBox.Text !=null && Price_TextBox.Text!=null && Performers_ListBox.SelectedItem!=null 
+            if(Name_TextBox.Text != String.Empty && Location_TextBox.Text != String.Empty && Price_TextBox.Text!= String.Empty && Performers_ListBox.SelectedItem!=null 
                 && Date_DatePicker.SelectedDate.HasValue)
             {
                 return true;

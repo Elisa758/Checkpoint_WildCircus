@@ -22,17 +22,13 @@ namespace WildCircus
             InitializeComponent();
         }
 
-        private void Cancel_btn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void Send_Btn_Click(object sender, RoutedEventArgs e)
         {
-            if(Mail_TextBox.Text !=null && Message_TextBox.Text !=null )
+            string mail = Mail_TextBox.Text;
+            string message = Message_TextBox.Text;
+            if (mail != String.Empty && message != String.Empty)
             {
-                string mail = Mail_TextBox.Text;
-                string message = Message_TextBox.Text;
+                
                 var context = new CircusContext();
                 Contact newContact = CreateContact(mail, message);
                 context.Add(newContact);
@@ -42,15 +38,14 @@ namespace WildCircus
             }
             else
             {
-                MessageBox.Show("You have to fill every field");
+                MessageBox.Show("You have to complete every field");
             }
 
         }
 
-        private void Mail_TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Cancel_btn_Click(object sender, RoutedEventArgs e)
         {
-            bool result = ValidateExtension.IsValidEmailAddress(Mail_TextBox.Text);
-            
+            this.Close();
         }
 
         public Contact CreateContact(string mail, string message)
@@ -65,13 +60,4 @@ namespace WildCircus
 
     }
 
-    public static class ValidateExtension
-    {
-
-        public static bool IsValidEmailAddress(this string s)
-        {
-            Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
-            return regex.IsMatch(s);
-        }
-    }
 }

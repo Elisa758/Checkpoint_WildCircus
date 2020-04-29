@@ -24,11 +24,11 @@
             <Label x:Name="Intro_Label" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="12" FontFamily="Yu Gothic UI Semibold">If you want more information, you can send us a message here : </Label>
             <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
                 <Label  Content="Mail : " Foreground="White" FontSize="12" FontFamily="Yu Gothic UI Semibold"/>
-                <TextBox x:Name="Mail_TextBox" TextChanged="Mail_TextBox_TextChanged" Width="200" Height="20" Margin="5"/>
+                <TextBox x:Name="Mail_TextBox" Width="200" Height="20" Margin="5"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
                 <Label  Content="Message : " Foreground="White" FontSize="12" FontFamily="Yu Gothic UI Semibold"/>
-                <TextBox x:Name="Message_TextBox" TextChanged="Mail_TextBox_TextChanged" Width="225" Height="120" Margin="5" MaxLength="200"/>
+                <TextBox x:Name="Message_TextBox" Width="225" Height="120" Margin="5" MaxLength="200"/>
             </StackPanel>
         </StackPanel>
 
